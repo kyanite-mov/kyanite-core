@@ -15,8 +15,8 @@ include = ["/src", "LICENSE", "README.md"]
 
 keywords = ["system", "kernel", "hardware", "telemetry", "process-management"]
 categories = [
-    "operating-systems",
-    "system-administration",
+    "os",
+    "command-line-utilities",
     "hardware-support",
     "filesystem",
     "development-tools::cargo-plugins",
