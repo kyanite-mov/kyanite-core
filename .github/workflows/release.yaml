@@ -11,15 +11,15 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       - name: Install Rust toolchain
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@d1031067263f94b142dd6c0ce24c5eb9d02d52a0
         with:
           components: clippy, rustfmt
 
       - name: Cache cargo registry
-        uses: actions/cache@v4
+        uses: actions/cache@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           path: |
             ~/.cargo/registry/index/
