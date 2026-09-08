@@ -39,9 +39,6 @@ jobs:
       - name: Run tests
         run: cargo test --release
 
-      - name: Verify package (dry-run)
-        run: cargo package --dry-run
-
       - name: Publish to crates.io
         env:
           CARGO_REGISTRY_TOKEN: ${{ secrets.CRATES_IO_TOKEN }}
