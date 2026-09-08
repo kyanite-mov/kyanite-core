@@ -1,17 +1,15 @@
 [package]
 name = "kyanite-core"
-version = "1.0.0-alpha"
-edition = "2024"
-rust-version = "1.98.0"
-authors = ["Kyanite Project <contact@kyanite.mov>"]
-
 description = "The core library for kyanite-app"
+authors = ["Kyanite Project <contact@kyanite.mov>"]
+version = "1.0.0-alpha"
+rust-version = "1.98.0"
+edition = "2024"
+
 readme = "README.md"
+license = "GPL-3.0-or-later"
 homepage = "https://kyanite.mov"
 repository = "https://github.com/kyanite-mov/kyanite-core"
-
-license = "GPL-3.0-or-later"
-license-file = "LICENSE"
 
 include = ["/src", "LICENSE", "README.md"]
 
