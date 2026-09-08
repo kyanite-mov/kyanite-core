@@ -1,0 +1,27 @@
+[package]
+name = "kyanite-core"
+version = "1.0.0-alpha"
+edition = "2024"
+rust-version = "1.98.0"
+authors = ["Kyanite Project <contact@kyanite.mov>"]
+
+description = "The core library for kyanite-app"
+readme = "README.md"
+homepage = "https://kyanite.mov"
+repository = "https://github.com/kyanite-mov/kyanite-core"
+
+license = "GPL-3.0-or-later"
+license-file = "LICENSE"
+
+include = ["/src", "LICENSE", "README.md"]
+
+keywords = ["system", "kernel", "hardware", "telemetry", "process-management"]
+categories = [
+    "operating-systems",
+    "system-administration",
+    "hardware-support",
+    "filesystem",
+    "development-tools::cargo-plugins",
+]
+
+[dependencies]

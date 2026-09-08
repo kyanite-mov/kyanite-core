@@ -1,0 +1,6 @@
+{
+    "yaml.disableSchemaDetection": [],
+    "yaml.schemas": {
+        "https://www.schemastore.org/github-workflow.json": "file:///home/akeoot/Code/git/kyanite-core/.github/workflows/release.yaml"
+    }
+}
