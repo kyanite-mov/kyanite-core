@@ -35,4 +35,4 @@ jobs:
             ${{ runner.os }}-cargo-test-
 
       - name: Run tests
-        run: cargo test --release
+        run: cargo test --release --all-features
