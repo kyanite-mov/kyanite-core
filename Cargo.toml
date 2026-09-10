@@ -11,10 +11,16 @@ license = "GPL-3.0-or-later"
 homepage = "https://kyanite.mov"
 repository = "https://github.com/Akeoott/kyanite-core"
 
-include = ["/src", "LICENSE", "README.md"]
-
 keywords = ["system", "kernel", "hardware", "telemetry", "process-management"]
 categories = ["os", "command-line-utilities", "hardware-support", "filesystem"]
+
+exclude = [
+    ".github/",
+    ".vscode/",
+    ".editorconfig",
+    ".gitignore",
+    ".gitattributes",
+]
 
 [features]
 default = []
@@ -24,6 +30,8 @@ telemetry = []
 [[example]]
 name = "dump"
 required-features = ["telemetry"]
+
+[dev-dependencies]
 
 [dependencies]
 serde = { version = "1.0.229", features = ["derive"] }
