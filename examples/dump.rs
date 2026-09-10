@@ -1,9 +1,9 @@
 // Copyright (c) Akeoot / Akeoott <contact@kyanite.mov>. Licensed under the GPL-3.0 Licence.
 // See the LICENSE file in the repository root for full license text.
 
+use kyanite_core::Telemetry;
 use std::thread;
 use std::time::Duration;
-use kyanite_core::Telemetry;
 
 fn main() {
     // 1. Initialize the aggregate (everything is zeroed/empty)
