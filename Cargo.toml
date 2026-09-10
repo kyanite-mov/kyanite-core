@@ -2,7 +2,7 @@
 name = "kyanite-core"
 description = "The core library for the kyanite project"
 authors = ["Kyanite Project <contact@kyanite.mov>"]
-version = "1.0.0-alpha.1"
+version = "1.0.0-alpha.2"
 rust-version = "1.98.0"
 edition = "2024"
 
