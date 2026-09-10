@@ -1,15 +1,17 @@
-name: Release
+name: Tests
 
 on:
-  release:
-    types: [published]
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
 
 permissions:
   contents: read
 
 jobs:
-  release:
-    name: Publish to crates.io
+  test:
+    name: Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -28,11 +30,9 @@ jobs:
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
             target/
-          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          key: ${{ runner.os }}-cargo-test-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: |
-            ${{ runner.os }}-cargo-
+            ${{ runner.os }}-cargo-test-
 
-      - name: Publish
-        env:
-          CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
-        run: cargo publish
+      - name: Run tests
+        run: cargo test --release
