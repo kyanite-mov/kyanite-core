@@ -3,8 +3,10 @@ name: Release
 on:
   release:
     types: [published]
-    permissions:
-      contents: read
+
+permissions:
+  contents: read
+
 jobs:
   release:
     name: Build, test, and publish
