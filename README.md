@@ -2,7 +2,7 @@
 
 [![Crates.io Version](https://img.shields.io/crates/v/kyanite-core?style=for-the-badge&logo=rust&labelColor=%231a1b1f&color=%23dea584)](https://crates.io/crates/kyanite-core)
 [![docs.rs](https://img.shields.io/docsrs/kyanite-core?style=for-the-badge&logo=docs.rs&labelColor=%231a1b1f)](https://docs.rs/kyanite-core)<br>
-[![License](https://img.shields.io/crates/l/kyanite-core?style=for-the-badge&labelColor=%231a1b1f)](LICENSE)
+[![License](https://img.shields.io/crates/l/kyanite-core?style=for-the-badge&labelColor=%231a1b1f)](https://github.com/Akeoott/kyanite-core/blob/main/LICENSE)
 [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/Akeoott/kyanite-core?style=for-the-badge&logoSize=auto&labelColor=%231a1b1f)](https://www.codefactor.io/repository/github/akeoott/kyanite-core)
 
 ### The core library for the kyanite project
@@ -106,5 +106,5 @@ Contributions are welcome. Please open an issue first for major changes so we ca
 
 ## License
 
-Licensed under the [GPL-3.0-or-later](LICENSE).
+Licensed under the [GPL-3.0-or-later](https://github.com/Akeoott/kyanite-core/blob/main/LICENSE).
 

@@ -3,7 +3,6 @@
 
 pub mod models;
 
-// Conditionally alias the platform module as `sys`
 #[cfg(target_os = "linux")]
 mod linux;
 #[cfg(target_os = "linux")]
@@ -14,17 +13,31 @@ mod windows;
 #[cfg(target_os = "windows")]
 use windows as sys;
 
+/// Aggregates all telemetry collectors into a single entry point.
+///
+/// Each field is a platform-specific implementation of a telemetry
+/// service. Call any or all update methods to populate their snapshots,
+/// then read individual snapshots via each service's `snapshot()` method.
 pub struct Telemetry {
+    /// CPU telemetry collector.
     pub cpu: sys::cpu::CpuTel,
+    /// Drive (storage) telemetry collector.
     pub drive: sys::drive::DriveTel,
+    /// GPU telemetry collector.
     pub gpu: sys::gpu::GpuTel,
+    /// Memory telemetry collector.
     pub memory: sys::memory::MemoryTel,
+    /// Network telemetry collector.
     pub network: sys::network::NetworkTel,
+    /// Process telemetry collector.
     pub process: sys::process::ProcessTel,
+    /// System-level telemetry collector.
     pub system: sys::system::SystemTel,
 }
 
 impl Telemetry {
+    /// Creates a new [`Telemetry`] instance with all snapshots initialized
+    /// to their default (empty/zero) values.
     pub fn new() -> Self {
         Self {
             cpu: sys::cpu::CpuTel::new(),
@@ -37,7 +50,11 @@ impl Telemetry {
         }
     }
 
-    /// Updates all telemetry collectors concurrently
+    /// Updates all telemetry collectors concurrently.
+    ///
+    /// Each collector runs on its own thread via `rayon::scope`, so a
+    /// single call fetches all data in parallel.
+    /// Blocks until all collectors have finished.
     pub fn update_all(&mut self) {
         rayon::scope(|s| {
             s.spawn(|_| self.cpu.update());
