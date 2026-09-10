@@ -1,8 +1,10 @@
 // Copyright (c) Akeoot / Akeoott <contact@kyanite.mov>. Licensed under the GPL-3.0 Licence.
 // See the LICENSE file in the repository root for full license text.
 
-#[cfg(any(feature = "telemetry", feature = "full"))]
-pub mod telemetry;
-
-#[cfg(any(feature = "telemetry", feature = "full"))]
-pub use telemetry::Telemetry;
+pub mod cpu;
+pub mod drive;
+pub mod gpu;
+pub mod memory;
+pub mod network;
+pub mod process;
+pub mod system;
