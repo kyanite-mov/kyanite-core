@@ -28,12 +28,6 @@ pub struct CpuTel {
     rapl_discovered: bool,
 }
 
-impl Default for CpuTel {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
 impl CpuTel {
     pub fn new() -> Self {
         Self {
