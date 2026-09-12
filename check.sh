@@ -17,4 +17,4 @@ cargo clippy --fix --allow-dirty --allow-staged --locked --workspace --all-targe
 cargo test --locked --workspace --release --all-features
 cargo doc --locked --workspace --no-deps --all-features
 
-printf 'All checks passed.\n'
+printf '\nAll checks passed.\n'
