@@ -2,6 +2,7 @@
 // See the LICENSE file in the repository root for full license text.
 
 pub mod models;
+use log::debug;
 
 #[cfg(target_os = "linux")]
 mod linux;
@@ -35,10 +36,17 @@ pub struct Telemetry {
     pub system: sys::system::SystemTel,
 }
 
+impl Default for Telemetry {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Telemetry {
     /// Creates a new [`Telemetry`] instance with all snapshots initialized
     /// to their default (empty/zero) values.
     pub fn new() -> Self {
+        debug!("Creating new telemetry instance");
         Self {
             cpu: sys::cpu::CpuTel::new(),
             drive: sys::drive::DriveTel::new(),
@@ -56,6 +64,7 @@ impl Telemetry {
     /// single call fetches all data in parallel.
     /// Blocks until all collectors have finished.
     pub fn update_all(&mut self) {
+        debug!("Updating all telemetry concurrently");
         rayon::scope(|s| {
             s.spawn(|_| self.cpu.update());
             s.spawn(|_| self.drive.update());
