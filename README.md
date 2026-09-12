@@ -14,8 +14,6 @@ exposing a unified interface for CPU, GPU, Memory, Drive, Network, Process, and 
 > This library is in active early development (`>= 1.0.0-alpha`).
 > APIs will change, features are incomplete, and it is **not** recommended for production use yet.
 
----
-
 ## Overview
 
 `kyanite-core` is a systems-level telemetry library written in Rust.
@@ -37,8 +35,6 @@ so consumers can read without triggering any I/O.
 - **Concurrent updates** – `Telemetry::update_all()` uses `rayon` to update every service in parallel
 - **Serde-ready** – all snapshot models serialize/deserialize out of the box
 - **Feature-gated** – enable only what you need via Cargo features
-
----
 
 ## Usage
 
@@ -74,8 +70,6 @@ For a full example covering all subsystems, see [`examples/telemetry.rs`](exampl
 cargo run --example telemetry --features telemetry
 ```
 
----
-
 ## Cargo Features
 
 | Feature     | Default | Description                                 |
@@ -83,26 +77,18 @@ cargo run --example telemetry --features telemetry
 | `full`      | No      | Alias that enables every available feature. |
 | `telemetry` | No      | Enables the full telemetry subsystem.       |
 
----
-
 ## Documentation
 
 - **API reference** – [docs.rs/kyanite-core](https://docs.rs/kyanite-core)
 - **Source code** – [github.com/Akeoott/kyanite-core](https://github.com/Akeoott/kyanite-core)
 
----
-
 ## Related Projects
 
 - [**kyanite-app**](https://github.com/Akeoott/kyanite-app) – The Tauri + Vue desktop application powered by this library.
 
----
-
 ## Contributing
 
 Contributions are welcome. Please open an issue first for major changes so we can discuss the approach.
-
----
 
 ## License
 
