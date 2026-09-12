@@ -68,7 +68,7 @@ fn main() {
 }
 ```
 
-For a full example covering all subsystems, see [`examples/dump.rs`](examples/dump.rs):
+For a full example covering all subsystems, see [`examples/telemetry.rs`](examples/telemetry.rs):
 
 ```sh
 cargo run --example dump --features telemetry
