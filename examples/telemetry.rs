@@ -6,19 +6,19 @@ use std::thread;
 use std::time::Duration;
 
 fn main() {
+    env_logger::init();
+    println!("\nuse `RUST_LOG=trace` to see exactly whats happening in the background.\n");
+
     // 1. Initialize the aggregate (everything is zeroed/empty)
     let mut telemetry = Telemetry::new();
 
     // 2. Refresh all hardware data twice
-    println!("Updating all");
     telemetry.update_all();
-    println!("Done, waiting one second...");
     thread::sleep(Duration::from_secs(1));
-    println!("Updating again\n");
     telemetry.update_all();
 
     // 3. Read and print snapshots
-    println!("{:?}", telemetry.cpu.snapshot());
+    println!("\n{:?}", telemetry.cpu.snapshot());
     println!("{:?}", telemetry.drive.snapshot());
     println!("{:?}", telemetry.gpu.snapshot());
     println!("{:?}", telemetry.memory.snapshot());

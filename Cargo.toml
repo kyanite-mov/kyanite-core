@@ -31,7 +31,7 @@ full = ["telemetry"]
 telemetry = []
 
 [[example]]
-name = "dump"
+name = "telemetry"
 required-features = ["telemetry"]
 
 [dev-dependencies]
@@ -39,3 +39,5 @@ required-features = ["telemetry"]
 [dependencies]
 serde = { version = "1.0.229", features = ["derive"] }
 rayon = "1.12.0"
+log = "0.4.34"
+env_logger = "0.11.11"
